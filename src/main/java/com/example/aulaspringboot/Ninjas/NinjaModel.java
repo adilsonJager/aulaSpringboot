@@ -1,6 +1,9 @@
-package com.example.aulaspringboot;
+package com.example.aulaspringboot.Ninjas;
 
+import com.example.aulaspringboot.Missoes.MissionModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "tb_register")
@@ -12,6 +15,11 @@ public class NinjaModel {
     private String name;
     private String email;
     private int idade;
+
+
+    @ManyToOne
+    @JoinColumn(name = "mission_id") //foreing key
+    private MissionModel mission;
 
 
     public NinjaModel() {}
